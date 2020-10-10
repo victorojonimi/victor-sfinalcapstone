@@ -1,0 +1,512 @@
+<!DOCTYPE html>
+<html>
+    <head>.....</head>
+    <style>
+        body{
+            font-family: sans-serif;
+            font-size: small;
+            background-color: rosybrown;
+            margin: 1px;
+            padding: 1px;
+            box-sizing: border-box;
+            display: block;
+            padding-top:20px;
+            padding-bottom: 25px;
+        }
+        .all{
+            display: flex;
+            margin: 50px 0;
+        }
+        .inside{
+            margin: 0 auto;
+            margin-right: 0%;
+            background-color:grey;
+            box-shadow: 0px 3px 3px 10px rgb(0,0,0,0.05);
+            border-radius: 20px;
+            width: 870px;
+        }
+        .info{
+            padding: 14px 3%;
+            justify-content: space-between;
+            display: flex;
+        }
+        .title{
+            font-weight: 700;
+            font-style: normal;
+            letter-spacing: 0em;
+            color: rgb(0, 142, 252);
+        }
+        #lighting{
+            text-align: center;
+            color: rgb(0, 142, 252)
+        }
+        .bold-text{
+            font-style: normal;
+            font-weight: small;
+            letter-spacing: 0em;
+        }
+        .bold-text p{
+            margin-bottom: 200px;
+            display: block;
+        }
+        p{
+            font-size:small;
+            font-weight: normal;
+        }
+        #vicz{
+            border-radius: 40px;
+            margin-right: 20px;
+            width: 100px;
+        }
+        .name{
+            font-size: xx-large;
+            font-weight: normal;
+            align-self: center;
+        }
+        .name span{
+            font-weight: bold;
+        }
+        .pix-name{
+            display: flex;
+        }
+        .social-media{
+            color: white;
+        }
+        .items-table{
+            list-style: none;
+            color: rgb(0, 142, 252);
+        }
+        .items{
+            margin-bottom: 5px;
+        }
+        .section{
+            display: flex;
+            padding-top: 54px;
+            margin: 20px;
+            padding-bottom: 53px;
+            border-top: 2px solid #E5E5E5;
+        }
+        .text p{
+            font-size: x-large;
+            line-height: 1.5;
+        }
+        body p{
+            font-weight: lighter;
+            line-height: 1.5;
+        }
+        .first-intro .text{
+            margin-right: 155px;
+        }
+        .first-interest .text{
+            margin-right: 118px;
+        }
+        .first-interest .body{
+            align-self: center;
+        }
+        .first-skill .text{
+            margin-right: 150px;
+        }
+        .first-skill .body{
+            display: flex;
+        }
+        .first-skill figure{
+            margin-right: 15%;
+            text-align: center;
+        }
+        .first-skill figure img{
+            height: 70px;
+        }
+        .body .light, .duration{
+            font-size: 13px;
+            font-weight: 600;
+            line-height: 18px;
+            color: rgb(170,170,170);
+        }
+        .first-edu .text{
+            margin-right: 110px;
+        }
+        .first-edu_item{
+            display: flex;
+            margin-bottom: 45px;
+            justify-content: space-between;
+        }
+        .first-edu_item .duration{
+            align-self: flex-end;
+            margin-left: 106px;
+        }
+        .first-exp .text{
+            margin-right: 100px;
+        }
+        .inner.exp{
+            justify-content: space-between;
+            display: flex;
+        }
+        .first-exp .duration{
+            margin-left: 350px;
+            align-self: flex-end;
+        }
+        .first-exp_item{
+            margin-bottom: 50px;
+        }
+        .first-exp_info p{
+            margin-bottom: 15px;
+        }
+        .first-exp_role {
+            width: 350px;
+            margin-top: 30px;
+        }
+        .first-project .text{
+            margin-right: 125px;
+        }
+        .first-project a{
+            text-decoration: none;
+            color: rgb(0, 142, 252);
+            font-size: small;
+            font-weight: 600;
+            line-height: 20px;
+        }
+        .first-project .body{
+            margin-bottom: 6px;
+            text-align: center;
+        }
+        .right{
+            margin-left: 35px;
+            margin: 0 auto;
+            align-content: center;
+            margin-top: 50px;
+            align-items: center;
+            align-self: center;
+        }
+        .dark{
+            position: fixed;
+            z-index: 999;
+            top: 50px;
+            height: 100px;
+            text-align: center;
+        }
+        .dark p{
+            line-height: 15px;
+            font-weight: 400px;
+            font-size: 11px;
+            color: rgb(0, 142, 252);
+        }
+        .dark-box img{
+            margin-right: 5px;
+        }
+        .dark-box img:nth-last-of-type(){
+            margin: 0;
+        }
+        .dark-container{
+            display: flex;
+            align-content: center;
+            align-self: center;
+            align-items: center;
+        }
+
+        .switchButton{
+            position: relative;
+            display: inline-flexbox;
+            height: 18px;
+            margin-right: 17px;
+            width: 32px;
+        }
+        .switchButton input{
+            width: 0;
+            height: 0;
+            height: 0;
+        }
+    
+        .switch{
+            position: absolute;
+            cursor: pointer;
+            top: 0;
+            right: 0;
+            left: 0;
+            bottom: 0;
+            background-color: rgb(204,204,204);
+            -webkit-transition: .4s;
+            transition: 4s;
+            height: 18px;
+            width: 32px;
+            background: rgb(11, 19, 53, 0.13);
+        }
+        .switch:before {
+            
+            position: absolute;
+            content: "";
+            height: 14px;
+            left: 2px;
+            width: 15px;
+            bottom: 2px;
+            background: rgb(170, 170, 170);
+            -webkit-transition: .4s;
+            transition: 4s;
+        }
+        input:checked+switch.round::before{
+            position: fixed;
+            right: 1px;
+            top: 1px;
+            background-color: rgb(0, 142, 252);
+        }
+        input:checked+.switch.round:before{
+            -webkit-transform: translateX(12px);
+            -ms-transform: translateX(12px);
+            transform:translateX(12px);
+        }
+        .switch.round{
+            border-radius: 22px;
+        }
+        .switch.round::before{
+            border-radius: 50%;
+        }
+        .inside.dark-screen{
+            background-color: black;
+        }
+        .inside.dark-screen .name, .inside.dark-screen .items-table .a, .inside.dark-screen .body p, .inside.dark-screen .first-skill,
+        .inside.dark-screen .body ul {
+         color: rgb(255,255,255);
+        }
+
+        .inside.dark-screen .body, .inside.dark-screen .body .text {
+        color: rgb(170,170,170);
+        }
+
+        .hide {
+        display: inline;
+        }
+        .dark_sm{
+            display: block;
+            position: absolute;
+            z-index: 999;
+            top: 10px;
+            height: 100px;
+            left: 20px;
+            text-align: center;
+        }
+        .dark-box{
+            text-align:center;
+            top: 100px;
+            position: fixed;
+            z-index: 999;
+        }
+        a#back_to_top{
+            display: block;
+            color: rgb(0,0,255);
+            text-decoration: none;
+            margin-bottom: 100px;
+            cursor: pointer;
+        }
+        .top{
+            bottom: 200px;
+        }
+</style>
+<body id="body">
+    <div class="all">
+        <div class="inside">
+            <div class="info">
+                <div class="pix-name">
+                    <img id="vicz" src="./IMG_20200528_102858_660.jpg"width="80px">
+                    <div class="name">
+                        <span> Victor </span> Emmanuel
+                        <a href="https//www.linkedin.com/in/victor-ojonimi-9bb4b4196">
+                            <img src="./link.png" width="30px" title="linkedin" class="social-media">
+                        </a>
+                        <a href="https//twitter.com/Victor Emmanuel">
+                            <img src="./twitter.png" width="30px" title="twitter" class="social-media">
+                        </a>
+                        <a href="https//facebook.com/Victor Emmanuel">
+                            <img src="./facebook.png" width="30px" title="facebook" class="social-media">
+                        </a>
+                        <a href="https//instagram.com/_vicz--_z">
+                            <img src="./instagram.png" width="30px" title="instagram" class="social-media">
+                        </a>
+                    </div>
+                </div>
+                
+                <ul class="items-table">
+                    <li class="items"> +2349052936443</li>
+                    <li class="items"><a href="https://mail.google.com/mail/u/0/">ojonimiv@gmail.com</a></li>
+                    <li class="items"><a href="https://github.com/victorojonimi">victorojonimi.github.com</a></li>
+                </ul>
+            </div>     
+            <div class="first-intro section">
+                <div class="text">
+                    <p class="title">Intro</p>
+                </div>
+                <div class="body">
+                    <p>Hi, I'm learning to design websites and development with Ehealth Africa Academy</p>
+                    <p>It been a month and some weeks now and have learnt alot,</p>
+                    <p>Learning and getting new ideas has been my thing and i watch movies when am not coding.</p>
+                </div>
+            </div>
+            <div class="first-interest section">
+                <div class="text">
+                    <p class="title">Interests</p>
+                </div>
+                <div class="body">
+                <p>Design | Frontend Engineering | Accounting | user experience</p>
+                </div>
+            </div>
+        
+            <div class="first-skill section">
+                <div class="text">
+                    <p class="title">Skills</p>
+                </div>
+                <div class="body">
+                <figure>
+                <img class="design" src="./logos_html-5.png"alt="HTML 5 image"width="50">
+                </figure>
+                <figure>
+                <img class="design" src="./logos_css-3.png"alt="CSS 3 image"width="50">
+                </figure>
+                <figure>
+                <img class="design" src="./logos_javascript.png"alt="JAVASCRIPT Image"width="50">
+                </figure>
+                </div>
+            </div>
+            <div class="first-edu section">
+                <div class="text">
+                    <p class="title">Education</p>
+                </div>
+                <div class="body">
+                    <div class="first-edu_item">
+                         <div class="first-edu_info">
+                          <p class="semi-bold_text">HND ACCOUNTING</p>
+                            <p>Federal Polytechnic Idah</p>
+                            <p class="light">Kogi, Nigeria</p>
+                        </div>
+                        <div class="duration" ">FEBRUARY 2015 - DECEMBER 2018</div>
+                    </div>
+                    <div class="first-edu_item">
+                        <div class="first-edu_info">
+                            <p class="semi-bold_text">SSCE</p>
+                            <p>ECWA BABA ALHAMDU SEC SCHOOL</p>
+                            <p class="light">Kano, Nigeria</p>
+                        </div>
+                        <div class="duration">SEPTEMBER 2007 - JULY 2013</div>
+                    </div>
+                    <div class="first-edu_item">
+                        <div class="first-edu_info">
+                            <p class="semi-bold_text">FSLC</p>
+                            <p>Children day Nusery and Primary School</p>
+                            <p class="light">Kano, Nigeria</p>
+                        </div>
+                        <div class="duration">JUNE 2001 - NOVEMBER 2008</div>
+                    </div>
+                </div>
+            </div>
+            <div class="first-exp section">
+                <div class="text">
+                    <p class="title">Experience</p>
+                </div>
+                <div class="body">
+                    <div class="first-exp_item">
+                        <div class="inner-exp">
+                            <div class="first-exp_info">
+                                <p class="semi-bold_text">eHealth Africa</p>
+                                <p> Student Member</p>
+                                <p class="light">Kano, Nigeria</p>
+                            </div>
+                            <div class="duration">AUGUST-PRESENT</div>
+                        </div>
+                        <ul class="first-exp_role">
+                            <li>Learnt web design HTML,CSS and Javascripts Basics</li>
+                        </ul>
+                    </div>
+                   
+                </div>
+            </div> 
+            <div class="first-project section">
+                <div class="text">
+                    <p class="title">Projects</p>
+                </div>
+                <div class="body">
+                    
+                    <p>
+                        <a href="https://github.com/victorojonimi/">eHealth Africa Academy Challanges  </a>
+                    </p>
+
+                </div>
+
+            </div>
+
+            <div id="dark" class="dark_sm">
+                <a href="#"><img  src="./img/moon.svg" alt=""></a>
+                <a href="#"><img  src="./img/sun.svg" alt=""></a>
+            </div>
+       </div>
+
+        <div class="right">
+            <div class="dark-box">
+                <div class="dark-container dark _sm" id="dark">
+                    <img src="./sun.svg" alt="">
+                    <label class="switchButton">
+                        <input type="check box" class="show hide">
+                        <span class="switch round"></span> <br>
+                    </label>
+                    <img src="./moon.svg" alt="">
+                </div>
+                <p id="lighting" class="bold-text">Light mode</p>
+            </div> 
+            <div class="top" onclick="scrollToTop();return false;">
+                <a href="#" id="back_to_top">
+                    <img src="./back_to_top.svg"alt><br>
+                        Back to top
+                </a>     
+            </div>  
+        </div>
+    </div>   
+<script>
+         //back to the top
+
+     var timeOut;
+    function scrollToTop() {
+        if (document.body.scrollTop!=0 || document.documentElement.scrollTop!=0){
+            window.scrollBy(0,-50);
+            timeOut=setTimeout('scrollToTop()',10);
+        }
+        else clearTimeout(timeOut);
+    }
+    //back to the top end here
+
+
+    const darkBtn = document.querySelector(".switch");
+//for larger screen
+        darkBtn.addEventListener("click", () => {
+          var container = document.querySelector(".inside")
+         if (container.classList.toggle("dark-screen")) {
+            document.getElementById("lighting").innerHTML = "Dark Mode";
+          
+        }else{
+            document.getElementById("lighting").innerHTML = "Light Mode";
+              }
+        });
+
+
+        const darkBtnSm = document.querySelector("#dark")
+        darkBtnSm.addEventListener("click", ()=>{
+          
+          var container = document.querySelector(".inside")
+          container.classList.toggle("dark-screen");         
+
+           if (document.querySelector(".show").classList.contains("hide"))
+           {
+                document.querySelector(".moon").classList.remove("hide")
+                document.querySelector(".sun").classList.add("hide")
+            }
+            else if(document.querySelector(".show").classList.contains("hide"))
+            {
+                document.querySelector(".sun").classList.remove("hide")
+                document.querySelector(".moon").classList.add("hide")
+
+            }     
+                                                }
+        );
+
+        $(function () {
+  $('[data-toggle="tooltip"]').tooltip()
+})
+</script>
+
+</body>
+</html>
